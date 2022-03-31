@@ -25,23 +25,25 @@ import re
 #spacy, string
 from nltk.corpus import stopwords
 #nltk.download('omw-1.4')
-from sklearn.feature_extraction.text import TfidfVectorizer,CountVectorizer
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
-
-# Importing libraries for Models Building
-from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection  import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import GridSearchCV
-from sklearn.metrics.pairwise import pairwise_distances
-from sklearn.metrics import f1_score, classification_report,precision_score,recall_score,confusion_matrix
-from sklearn.metrics import roc_auc_score, roc_curve,accuracy_score
+from sklearn.feature_extraction.text import TfidfVectorizer,CountVectorizer
 
 # Importing libraries to balance Class
 from collections import Counter
 from imblearn import over_sampling
 from imblearn.over_sampling import SMOTE
+
+# Importing libraries for Models Building
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import f1_score, classification_report,precision_score,recall_score,confusion_matrix
+from sklearn.metrics import roc_auc_score, roc_curve,accuracy_score
+
+from sklearn.metrics.pairwise import pairwise_distances
+from sklearn.preprocessing import MinMaxScaler
+
 
 # Remove warnings
 import warnings
