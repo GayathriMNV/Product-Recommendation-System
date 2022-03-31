@@ -17,8 +17,11 @@ import seaborn as sns
 from numpy import *
 import pickle as pickle
 
+import nltk
+nltk.data.path.append('./nltk_data/')
+
 # Importing libraries for text preprocessing and analysis
-import re, nltk, spacy, string
+import re, spacy, string
 from nltk.corpus import stopwords
 #nltk.download('omw-1.4')
 from sklearn.feature_extraction.text import TfidfVectorizer,CountVectorizer
