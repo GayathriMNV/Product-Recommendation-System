@@ -19,6 +19,7 @@ tfidf_vect_model = pickle.load(open('tfidf.pkl', 'rb'))
 logistic_model = pickle.load(open('LogisticRegression_Model.pkl', 'rb'))
 user_recommendation_model = pickle.load(open('user_based_sentiment_model.pkl', 'rb'))
 
+import model
 
 @app.route('/')
 
