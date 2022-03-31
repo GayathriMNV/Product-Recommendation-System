@@ -2,6 +2,13 @@ import numpy as np
 import pandas as pd
 from flask import Flask, request, jsonify,render_template
 import pickle
+import os
+
+#to get the current working directory
+dir = os.getcwd() + "/" + 'nltk_data'
+print(dir)
+import nltk
+nltk.data.path.append(dir)
 
 # Initializing Flask
 app = Flask(__name__)
@@ -58,12 +65,12 @@ def predict():
 		
 		
 		return render_template('index.html', user_name = user_name, prediction_text = '1.{} 2.{} 3.{} 4.{}5.{}'.format(top5_products_recommended[0],
-																									top5_products_recommended[1],
-																									top5_products_recommended[2],
-																									top5_products_recommended[3],
-																									top5_products_recommended[4],
-																									)
-							)
+															       top5_products_recommended[1],
+														               top5_products_recommended[2],
+															       top5_products_recommended[3],
+															       top5_products_recommended[4],
+															       )
+					)
 		
 		
 	else :
