@@ -30,10 +30,7 @@ from nltk.tokenize import word_tokenize
 from sklearn.model_selection  import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer,CountVectorizer
 
-# Importing libraries to balance Class
-from collections import Counter
-from imblearn import over_sampling
-from imblearn.over_sampling import SMOTE
+
 
 # Importing libraries for Models Building
 from sklearn.linear_model import LogisticRegression
@@ -174,9 +171,12 @@ pickle.dump(tfidf_model, open("tfidf.pkl", "wb"))
 # 1.3.2 Handling Class Imbalance using SMOTE
 
 # Applying  SMOTE 
-
+# Importing libraries to balance Class
+from collections import Counter
 counter = Counter(y_train)
 
+from imblearn import over_sampling
+from imblearn.over_sampling import SMOTE
 #oversampling using SMOTE
 smote = SMOTE(random_state = 45)
 X_train_sm, y_train_sm = smote.fit_resample(tf_X_train, y_train)
